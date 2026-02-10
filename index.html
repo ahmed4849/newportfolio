@@ -130,6 +130,10 @@
             style="background-image: url('./assets/images/Design/banner-bg.png')">
         </div>
 
+        <div class="hero-watermark">
+            Senior Full Stack Developer
+        </div>
+
         <!-- Decorative Floating Elements -->
         <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
             <div
@@ -153,7 +157,7 @@
                         <div class="w-1 h-40 sm:h-60 violet-gradient"></div>
                     </div>
                     <div class="z-10">
-                        <h1 class="font-black text-white text-[40px] sm:text-[60px] lg:text-[80px] leading-tight mt-2">
+                        <h1 class="font-black text-white text-[clamp(2.5rem,8vw,5rem)] leading-tight mt-2">
                             Hi, I'm <span class="name-gradient">MUHAMMAD ARSLAN HAIDER</span>
                         </h1>
                         <div class="mt-4 flex items-center h-[50px]">
@@ -189,10 +193,10 @@
             </div>
 
             <!-- Right Side -->
-            <div class="relative w-full h-[300px] sm:h-[450px] lg:h-[600px] flex justify-center items-center">
-                <div class="relative w-[250px] h-[250px] sm:w-[450px] sm:h-[450px] z-20 animate-float-slow">
-                    <img src="./assets/images/Design/user.svg" alt="Developer"
-                        class="w-full h-full object-contain filter drop-shadow-[0_0_50px_rgba(145,94,255,0.3)]" />
+            <div class="relative w-full h-[350px] sm:h-[500px] lg:h-[700px] flex justify-center items-center">
+                <div
+                    class="relative w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] lg:w-[650px] lg:h-[650px] z-20 animate-float-slow">
+                    <img src="./assets/images/Design/user.svg" alt="Developer" class="w-full h-full object-contain" />
                 </div>
             </div>
         </div>
@@ -444,10 +448,22 @@
                         <div id="deck-panel-core" class="deck-panel active">
                             <h3 class="panel-title"><span class="text-secondary">#</span> Core Programming</h3>
                             <div class="panel-grid">
-                                <div class="skill-item">C#</div>
-                                <div class="skill-item">JavaScript</div>
-                                <div class="skill-item">TypeScript</div>
-                                <div class="skill-item">XML</div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/c-sharp.png" class="skill-icon" alt="C#" />
+                                    <span>C#</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/javascript.png" class="skill-icon" alt="JS" />
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/typescript.png" class="skill-icon" alt="TS" />
+                                    <span>TypeScript</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/xml.png" class="skill-icon" alt="XML" />
+                                    <span>XML</span>
+                                </div>
                                 <div class="skill-item">SOLID Principles</div>
                                 <div class="skill-item">Clean Architecture</div>
                                 <div class="skill-item">OOP</div>
@@ -461,18 +477,55 @@
                         <div id="deck-panel-web" class="deck-panel">
                             <h3 class="panel-title"><span class="text-secondary">#</span> Web Technologies</h3>
                             <div class="panel-grid">
-                                <div class="skill-item">HTML5</div>
-                                <div class="skill-item">CSS3</div>
-                                <div class="skill-item">SCSS</div>
-                                <div class="skill-item">Angular</div>
-                                <div class="skill-item">ReactJS</div>
-                                <div class="skill-item">AngularJS</div>
-                                <div class="skill-item">Bootstrap</div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/html.png" class="skill-icon" alt="HTML5" />
+                                    <span>HTML5</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/css.png" class="skill-icon" alt="CSS3" />
+                                    <span>CSS3</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/css.png" class="skill-icon" alt="SCSS" />
+                                    <span>SCSS</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/angular.png" class="skill-icon" alt="Angular" />
+                                    <span>Angular</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/reactjs.png" class="skill-icon" alt="ReactJS" />
+                                    <span>ReactJS</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/angular.png" class="skill-icon" alt="AngularJS" />
+                                    <span>AngularJS</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/Bootstap.png" class="skill-icon" alt="Bootstrap" />
+                                    <span>Bootstrap</span>
+                                </div>
                                 <div class="skill-item">Material UI</div>
-                                <div class="skill-item">PrimeNG</div>
-                                <div class="skill-item">NG Bootstrap</div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/icons8-primeng-48.png" class="skill-icon"
+                                        alt="PrimeNG" />
+                                    <span>PrimeNG</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/ng bootsrap.svg" class="skill-icon"
+                                        alt="NG Bootstrap" />
+                                    <span>NG Bootstrap</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/tailwind.png" class="skill-icon" alt="Tailwind" />
+                                    <span>Tailwind CSS</span>
+                                </div>
                                 <div class="skill-item">DevExpress</div>
-                                <div class="skill-item">Responsive Design</div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/responsive design.png" class="skill-icon"
+                                        alt="Responsive" />
+                                    <span>Responsive Design</span>
+                                </div>
                                 <div class="skill-item">Cross-Browser Compatibility</div>
                             </div>
                         </div>
@@ -481,17 +534,36 @@
                         <div id="deck-panel-frameworks" class="deck-panel">
                             <h3 class="panel-title"><span class="text-secondary">#</span> Frameworks & Patterns</h3>
                             <div class="panel-grid">
-                                <div class="skill-item">.NET Core / Core Web API</div>
-                                <div class="skill-item">Microsoft .NET</div>
-                                <div class="skill-item">WPF</div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/Asp.net.png" class="skill-icon" alt=".NET" />
+                                    <span>.NET Core / Core Web API</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/Asp.net.png" class="skill-icon" alt=".NET" />
+                                    <span>Microsoft .NET</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/wpf.png" class="skill-icon" alt="WPF" />
+                                    <span>WPF</span>
+                                </div>
                                 <div class="skill-item">WinForms</div>
-                                <div class="skill-item">AbpFramework</div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/abp-framework.svg" class="skill-icon" alt="ABP" />
+                                    <span>AbpFramework</span>
+                                </div>
                                 <div class="skill-item">Hangfire</div>
-                                <div class="skill-item">Dapper</div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/dapper.png" class="skill-icon" alt="Dapper" />
+                                    <span>Dapper</span>
+                                </div>
                                 <div class="skill-item">EF Core</div>
                                 <div class="skill-item">ADO.NET</div>
                                 <div class="skill-item">CQRS Design Pattern</div>
                                 <div class="skill-item">Microservices</div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/redux.png" class="skill-icon" alt="Redux" />
+                                    <span>Redux</span>
+                                </div>
                                 <div class="skill-item">XUnit / NUnit</div>
                             </div>
                         </div>
@@ -500,11 +572,23 @@
                         <div id="deck-panel-database" class="deck-panel">
                             <h3 class="panel-title"><span class="text-secondary">#</span> Databases & Data</h3>
                             <div class="panel-grid">
-                                <div class="skill-item">MS SQL Server</div>
-                                <div class="skill-item">MySQL</div>
-                                <div class="skill-item">PostgreSQL</div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/SQL.png" class="skill-icon" alt="SQL" />
+                                    <span>MS SQL Server</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/SQL.png" class="skill-icon" alt="SQL" />
+                                    <span>MySQL</span>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/SQL.png" class="skill-icon" alt="SQL" />
+                                    <span>PostgreSQL</span>
+                                </div>
                                 <div class="skill-item">SQLite</div>
-                                <div class="skill-item">Firebase (Firestore/Realtime)</div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/firebase.png" class="skill-icon" alt="Firebase" />
+                                    <span>Firebase (Firestore/Realtime)</span>
+                                </div>
                                 <div class="skill-item">NoSQL Databases</div>
                                 <div class="skill-item">Data Analysis</div>
                                 <div class="skill-item">Reporting Tools</div>
@@ -521,6 +605,10 @@
                                 <div class="skill-item">RestSharp</div>
                                 <div class="skill-item">Postman</div>
                                 <div class="skill-item">Swagger</div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/jwt.png" class="skill-icon" alt="JWT" />
+                                    <span>JWT (JSON Web Token)</span>
+                                </div>
                                 <div class="skill-item">WebHooks</div>
                             </div>
                         </div>
@@ -531,11 +619,17 @@
                             <div class="panel-grid">
                                 <div class="skill-item">AWS</div>
                                 <div class="skill-item">Azure / Azure DevOps</div>
-                                <div class="skill-item">Git / GitHub / GitLab</div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/git.png" class="skill-icon" alt="Git" />
+                                    <span>Git / GitHub / GitLab</span>
+                                </div>
                                 <div class="skill-item">BitBucket</div>
                                 <div class="skill-item">CI/CD</div>
                                 <div class="skill-item">DevOps Practices</div>
-                                <div class="skill-item">Docker</div>
+                                <div class="skill-item">
+                                    <img src="./assets/images/tech/docker.png" class="skill-icon" alt="Docker" />
+                                    <span>Docker</span>
+                                </div>
                             </div>
                         </div>
 
@@ -554,7 +648,8 @@
 
                         <!-- Panel 8: Management -->
                         <div id="deck-panel-management" class="deck-panel">
-                            <h3 class="panel-title"><span class="text-secondary">#</span> Management & Expertise</h3>
+                            <h3 class="panel-title"><span class="text-secondary">#</span> Management & Expertise
+                            </h3>
                             <div class="panel-grid">
                                 <div class="skill-item">Project Planning / Coordination</div>
                                 <div class="skill-item">Agile / Scrum</div>
@@ -822,34 +917,44 @@
                             class="w-full px-4 py-3 rounded-lg bg-tertiary text-white outline-none border border-gray-700 focus:border-purple-500 transition"
                             placeholder="Your message"></textarea>
                     </div>
-                    <button type="submit"
+                    <button type="submit" id="form-submit-btn"
                         class="w-full bg-gradient-to-r from-[#80DEEA] to-[#E0FBFF] text-[#050816] py-4 rounded-lg font-bold text-lg hover:shadow-[0_0_30px_rgba(128,222,234,0.4)] transition-all duration-300 hover:scale-[1.02]">Send
                         Message</button>
+
+                    <!-- Success Message -->
+                    <div id="form-success"
+                        class="hidden mt-4 p-4 rounded-lg bg-green-500/20 border border-green-500 text-green-400 text-center font-bold animate-fade-in">
+                        ✅ Message Sent Successfully!
+                    </div>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="relative w-full bg-black-200 py-12 px-6 border-t border-white border-opacity-10">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center h-full">
-            <div class="text-secondary mb-4 md:mb-0">
-                <p class="font-semibold text-white/80 transition-colors hover:text-white">© 2026 Muhammad Arslan Haider.
-                    All rights reserved.</p>
+    <footer class="relative w-full bg-black-200/50 backdrop-blur-md py-8 px-6 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-secondary">
+                <p class="text-[15px] text-white/70 transition-colors hover:text-white">
+                    © 2026 <span class="text-white font-bold tracking-wide">Muhammad Arslan Haider.</span> All rights
+                    reserved.
+                </p>
             </div>
-            <div class="flex gap-10">
+            <div class="flex gap-8">
                 <!-- Socials -->
                 <a href="https://github.com/arslanh600" target="_blank"
-                    class="flex items-center gap-2 text-secondary hover:text-[#E0FBFF] transition-all duration-300 group">
+                    class="flex items-center gap-3 text-secondary hover:text-[#E0FBFF] transition-all duration-300 group">
                     <img src="./assets/images/Design/github.png"
-                        class="w-5 h-5 object-contain brightness-75 group-hover:brightness-100" alt="GitHub" />
-                    <span class="font-medium text-sm lg:text-base">GitHub</span>
+                        class="w-6 h-6 object-contain brightness-75 group-hover:brightness-100 group-hover:scale-110 transition-all"
+                        alt="GitHub" />
+                    <span class="font-semibold text-base">GitHub</span>
                 </a>
                 <a href="https://www.linkedin.com/in/arslanh600/" target="_blank"
-                    class="flex items-center gap-2 text-secondary hover:text-[#80DEEA] transition-all duration-300 group">
+                    class="flex items-center gap-3 text-secondary hover:text-[#80DEEA] transition-all duration-300 group">
                     <img src="./assets/images/Design/Linkdin.png"
-                        class="w-5 h-5 object-contain brightness-75 group-hover:brightness-100" alt="LinkedIn" />
-                    <span class="font-medium text-sm lg:text-base">LinkedIn</span>
+                        class="w-6 h-6 object-contain brightness-75 group-hover:brightness-100 group-hover:scale-110 transition-all"
+                        alt="LinkedIn" />
+                    <span class="font-semibold text-base">LinkedIn</span>
                 </a>
             </div>
         </div>

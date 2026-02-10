@@ -123,78 +123,116 @@ tiltCards.forEach(card => {
 // 3D Earth Animation
 function initEarth() {
     const container = document.getElementById('earth-container');
-    if (!container) return; // Exit if container doesn't exist
+    if (!container) return;
 
-    // Scene setup
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    camera.position.z = 4.5;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 
-    // Create Earth Sphere
-    const geometry = new THREE.SphereGeometry(2, 32, 32);
-    const material = new THREE.MeshBasicMaterial({
-        color: 0x00cea8, // Cyan/Teal color
-        wireframe: true,
+    // Cyber-Hologram Earth (Points System)
+    const earthGeometry = new THREE.SphereGeometry(2, 64, 64);
+    const earthMaterial = new THREE.PointsMaterial({
+        color: 0x00cea8,
+        size: 0.02,
         transparent: true,
-        opacity: 0.8
+        opacity: 0.8,
+        sizeAttenuation: true
     });
-    const earth = new THREE.Mesh(geometry, material);
-    scene.add(earth);
+    const earthPoints = new THREE.Points(earthGeometry, earthMaterial);
+    scene.add(earthPoints);
 
-    // Create Inner Sphere (Core) to add depth
-    const coreGeometry = new THREE.SphereGeometry(1.8, 16, 16);
+    // Inner Glow / Core
+    const coreGeometry = new THREE.SphereGeometry(1.95, 32, 32);
     const coreMaterial = new THREE.MeshBasicMaterial({
-        color: 0x000000,
+        color: 0x002d25,
         transparent: true,
-        opacity: 0.9
+        opacity: 0.4,
+        side: THREE.BackSide
     });
     const core = new THREE.Mesh(coreGeometry, coreMaterial);
     scene.add(core);
 
-    // Add Stars/Atmosphere (Particles) around Earth
-    const starsGeometry = new THREE.BufferGeometry();
-    const starsMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05 });
-    const starsVertices = [];
-    for (let i = 0; i < 500; i++) {
-        const x = (Math.random() - 0.5) * 10;
-        const y = (Math.random() - 0.5) * 10;
-        const z = (Math.random() - 0.5) * 10;
-        starsVertices.push(x, y, z);
-    }
-    starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starsVertices, 3));
-    const starField = new THREE.Points(starsGeometry, starsMaterial);
-    scene.add(starField);
+    // Atmospheric Glow
+    const atmosGeometry = new THREE.SphereGeometry(2.1, 32, 32);
+    const atmosMaterial = new THREE.MeshBasicMaterial({
+        color: 0x00cea8,
+        transparent: true,
+        opacity: 0.15,
+        blending: THREE.AdditiveBlending,
+        side: THREE.BackSide
+    });
+    const atmosphere = new THREE.Mesh(atmosGeometry, atmosMaterial);
+    scene.add(atmosphere);
 
-    // Positioning
-    camera.position.z = 5;
+    // Soft Orbiting Particles
+    const particlesCount = 300;
+    const particlesGeometry = new THREE.BufferGeometry();
+    const posArray = new Float32Array(particlesCount * 3);
+
+    for (let i = 0; i < particlesCount * 3; i++) {
+        posArray[i] = (Math.random() - 0.5) * 10;
+    }
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+    const particlesMaterial = new THREE.PointsMaterial({
+        color: 0xffffff,
+        size: 0.03,
+        transparent: true,
+        opacity: 0.5,
+        blending: THREE.AdditiveBlending
+    });
+
+    const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particles);
+
+    // Mouse Interaction Variables
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetX = 0;
+    let targetY = 0;
+
+    container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        targetX = (e.clientX - rect.left - rect.width / 2) / rect.width;
+        targetY = (e.clientY - rect.top - rect.height / 2) / rect.height;
+    });
 
     // Animation Loop
     function animate() {
         requestAnimationFrame(animate);
 
-        earth.rotation.y += 0.005;
-        earth.rotation.x += 0.001;
+        // Smooth translation of camera/rotation based on mouse
+        mouseX += (targetX - mouseX) * 0.05;
+        mouseY += (targetY - mouseY) * 0.05;
 
-        starField.rotation.y -= 0.002;
+        // Base rotation
+        earthPoints.rotation.y += 0.002;
+        earthPoints.rotation.x = mouseY * 0.2;
+        earthPoints.rotation.z = mouseX * 0.1;
+
+        atmosphere.rotation.y = earthPoints.rotation.y;
+
+        particles.rotation.y -= 0.001;
+        particles.rotation.x += 0.0005;
 
         renderer.render(scene, camera);
     }
 
     animate();
 
-    // Handle Resize
     window.addEventListener('resize', () => {
         if (!container) return;
         const width = container.clientWidth;
         const height = container.clientHeight;
 
-        renderer.setSize(width, height);
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
     });
 }
 
@@ -224,4 +262,38 @@ function switchDeckTab(category) {
 // Initialize components when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initEarth();
+
+    // Contact Form Handler
+    const contactForm = document.getElementById('contact-form');
+    const formSuccess = document.getElementById('form-success');
+    const submitBtn = document.getElementById('form-submit-btn');
+
+    if (contactForm && formSuccess) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Change button state
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Simulate sending (you could replace this with a real fetch call)
+            setTimeout(() => {
+                // Show success message
+                formSuccess.classList.remove('hidden');
+
+                // Reset button
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+
+                // Reset form
+                contactForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    formSuccess.classList.add('hidden');
+                }, 5000);
+            }, 1000);
+        });
+    }
 });
