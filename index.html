@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUHAMMAD ARSLAN HAIDER | Senior Full-Stack Software Engineer | Angular/ReactJS & .NET Core Expert </title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#050816",
+                        secondary: "#aaa6c3",
+                        tertiary: "#151030",
+                        "black-100": "#100d25",
+                        "black-200": "#090325",
+                        "white-100": "#f3f3f3",
+                    },
+                    boxShadow: {
+                        card: "0px 35px 120px -15px #211e35",
+                    },
+                    screens: {
+                        xs: "450px",
+                    },
+                    backgroundImage: {
+                        "hero-pattern": "url('./assets/herobg.png')",
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons (simulated via assets or placeholders where needed) -->
+</head>
+
+<body class="bg-primary relative z-0 overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="w-full flex items-center py-5 fixed top-0 z-20 bg-transparent transition-all duration-300">
+        <div class="w-full flex justify-between items-center max-w-7xl mx-auto px-6 sm:px-16">
+            <a href="#" class="flex items-center gap-2" onclick="window.scrollTo(0,0); return false;">
+                <img src="./assets/images/user.png" alt="logo" class="w-9 h-9 object-contain rounded-full" />
+                <p class="text-white text-[18px] font-bold cursor-pointer flex">
+                    &nbsp;
+                    <span class="sm:block hidden"></span>
+                </p>
+            </a>
+
+            <ul class="list-none hidden sm:flex flex-row gap-10">
+                <li class="about-link text-secondary hover:text-white text-[18px] font-medium cursor-pointer transition-colors"
+                    data-id="about">
+                    <a href="#about">About</a>
+                </li>
+                <li class="work-link text-secondary hover:text-white text-[18px] font-medium cursor-pointer transition-colors"
+                    data-id="works">
+                    <a href="#works">Work</a>
+                </li>
+                <li class="contact-link text-secondary hover:text-white text-[18px] font-medium cursor-pointer transition-colors"
+                    data-id="contact">
+                    <a href="#contact">Contact</a>
+                </li>
+                <li
+                    class="relative group cursor-pointer text-secondary hover:text-white text-[18px] font-medium transition-colors">
+                    <span>Resume</span>
+                    <div
+                        class="absolute top-full left-0 mt-2 hidden group-hover:block bg-primary rounded-md shadow-lg p-2 min-w-[120px]">
+                        <a href="assets/images/Resume/Arslan_Full-Stack_2026.pdf" target="_blank"
+                            class="block px-4 py-2 text-white text-sm hover:bg-tertiary rounded">View</a>
+                        <a href="assets/images/Resume/Arslan_Full-Stack_2026.pdf" download
+                            class="block px-4 py-2 text-white text-sm hover:bg-tertiary rounded">Download</a>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="sm:hidden flex flex-1 justify-end items-center">
+                <img src="./assets/images/menu.svg" alt="menu" id="menu-toggle"
+                    class="w-[28px] h-[28px] object-contain cursor-pointer" />
+
+                <div id="mobile-menu"
+                    class="p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl hidden">
+                    <ul class="list-none flex justify-end items-start flex-1 flex-col gap-4">
+                        <li class="text-secondary font-poppins font-medium cursor-pointer text-[16px]"
+                            onclick="closeMenu()">
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="text-secondary font-poppins font-medium cursor-pointer text-[16px]"
+                            onclick="closeMenu()">
+                            <a href="#works">Work</a>
+                        </li>
+                        <li class="text-secondary font-poppins font-medium cursor-pointer text-[16px]"
+                            onclick="closeMenu()">
+                            <a href="#contact">Contact</a>
+                        </li>
+                        <li class="text-secondary font-poppins font-medium cursor-pointer text-[16px]">
+                            <a href="assets/images/Resume/Arslan_Full-Stack_2026.pdf" target="_blank">Resume</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+        class="relative w-full min-h-screen mx-auto overflow-hidden flex flex-col justify-center bg-cover bg-no-repeat bg-center pb-20 sm:pb-0"
+        style="background-image: url('./assets/images/banner-bg.png')">
+
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+            <div
+                class="absolute top-1/4 left-1/4 w-72 h-72 bg-[#915EFF] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob">
+            </div>
+            <div
+                class="absolute top-1/3 right-1/4 w-72 h-72 bg-[#00cea8] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob android-delay-2000">
+            </div>
+            <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 opacity-[0.03] animate-float-slow">
+                <img src="./assets/images/tech/html.png" class="w-full h-full object-contain filter grayscale invert" />
+            </div>
+        </div>
+
+        <div
+            class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center w-full h-full pt-20">
+            <!-- Left Side -->
+            <div class="flex flex-col items-start gap-6">
+                <div class="flex flex-row items-center gap-4">
+                    <div class="flex flex-col justify-center items-center h-full">
+                        <div class="w-5 h-5 rounded-full bg-[#915EFF]"></div>
+                        <div class="w-1 h-40 sm:h-60 violet-gradient"></div>
+                    </div>
+                    <div class="z-10">
+                        <h1 class="font-black text-white text-[40px] sm:text-[60px] lg:text-[80px] leading-tight mt-2">
+                            Hi, I'm <span class="text-[#915EFF]">MUHAMMAD ARSLAN HAIDER</span>
+                        </h1>
+                        <div class="mt-4 flex items-center h-[50px]">
+                            <span class="text-[#dfd9ff] font-medium text-[20px] sm:text-[30px] font-mono">
+                                > <span id="typing-text"></span><span
+                                    class="animate-blink bg-[#00cea8] w-[2px] h-[30px] inline-block ml-1 align-middle"></span>
+                            </span>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="mt-6 flex flex-wrap gap-4 z-10 relative">
+                            <a href="https://github.com/arslanh600" target="_blank"
+                                class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1d1836] border border-[#915EFF] hover:bg-[#915EFF] hover:text-white transition-all duration-300 group shadow-[0_0_10px_rgba(145,94,255,0.4)]">
+                                <img src="./assets/images/github.png" class="w-5 h-5 object-contain" alt="github" />
+                                <span class="text-white font-medium">GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/arslanh600/" target="_blank"
+                                class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1d1836] border border-[#00cea8] hover:bg-[#00cea8] hover:text-white transition-all duration-300 group shadow-[0_0_10px_rgba(0,206,168,0.4)]">
+                                <span class="text-white font-medium">LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="relative w-full h-[300px] sm:h-[450px] lg:h-[600px] flex justify-center items-center">
+                <div class="relative w-[250px] h-[250px] sm:w-[450px] sm:h-[450px] z-20 animate-float-slow">
+                    <img src="./assets/images/user.png" alt="Developer"
+                        class="w-full h-full object-contain filter drop-shadow-[0_0_50px_rgba(145,94,255,0.3)]" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 w-full flex justify-center items-center z-30">
+            <a href="#about" class="cursor-pointer group">
+                <div
+                    class="w-[35px] h-[64px] rounded-3xl border-4 border-[#915EFF] group-hover:border-[#00cea8] transition-colors flex justify-center items-start p-2">
+                    <div class="w-3 h-3 rounded-full bg-[#915EFF] group-hover:bg-[#00cea8] mb-1 animate-scroll-bounce">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative w-full min-h-screen mx-auto py-20 px-6 sm:px-16 max-w-7xl">
+        <div class="flex flex-col md:flex-row items-start justify-between gap-10">
+            <div class="flex-1">
+                <p
+                    class="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider pl-2 border-l-4 border-secondary/50 mb-2">
+                    Introduction</p>
+                <h2
+                    class="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] leading-tight">
+                    Overview.</h2>
+
+                <p class="mt-4 text-secondary text-[17px] max-w-2xl leading-[30px] font-medium fade-in-section">
+                    I am a results-driven Sr. Full-Stack Software Engineer with over 6 years of experience in developing
+                    high-performance,
+                    scalable software applications. I specialize in transitioning legacy systems to modern frameworks
+                    and optimizing
+                    system performance for enterprise-level applications. With strong proficiency in .NET Core, Angular,
+                    React, Postgress,
+                    SQL Server, and Azure DevOps, I possess hands-on expertise in API development and cloud integration.
+                    I thrive in fast
+                    paced environments, leading teams to troubleshoot complex technical issues and deliver impactful
+                    business solutions.
+                </p>
+            </div>
+            <div class="flex-1 flex justify-center items-center relative min-h-[300px] md:min-h-[400px]">
+                <img src="./assets/images/user.png"
+                    class="w-full h-full object-contain animate-float drop-shadow-2xl" />
+            </div>
+        </div>
+
+        <!-- Service Cards -->
+        <div class="mt-20 flex flex-wrap gap-10 justify-center">
+            <!-- Card 1 -->
+            <div class="tilt-card xs:w-[250px] w-full">
+                <div class="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
+                    <div
+                        class="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
+                        <img src="./assets/images/web.png" class="w-16 h-16 object-contain" />
+                        <h3 class="text-white text-[20px] font-bold text-center">Web Developer</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="tilt-card xs:w-[250px] w-full">
+                <div class="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
+                    <div
+                        class="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
+                        <!-- Placeholder icon if actual one absent -->
+                        <img src="./assets/images/backend.png" class="w-16 h-16 object-contain" />
+                        <h3 class="text-white text-[20px] font-bold text-center">Backend Developer</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="tilt-card xs:w-[250px] w-full">
+                <div class="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
+                    <div
+                        class="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
+                        <img src="./assets/images/creator.png" class="w-16 h-16 object-contain" />
+                        <h3 class="text-white text-[20px] font-bold text-center">Content Creator</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="work" class="relative w-full min-h-screen mx-auto py-20 px-6 sm:px-16 max-w-7xl">
+        <div class="fade-in-section">
+            <p class="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider text-center">What I have done
+                so far</p>
+            <h2 class="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] text-center">Work
+                Experience.</h2>
+        </div>
+
+        <div class="mt-20 flex flex-col">
+            <div class="vertical-timeline relative border-l-2 border-[#915EFF] ml-4 md:ml-0 md:pl-0">
+
+                <!-- Experience 1 -->
+                <div class="mb-8 flex justify-between items-center w-full right-timeline fade-in-section group">
+                    <div class="order-1 w-1/12 hidden md:block"></div>
+                    <div
+                        class="z-20 flex items-center order-1 bg-[#1d1836] shadow-xl w-8 h-8 rounded-full border-4 border-[#915EFF] absolute left-[-11px] md:relative md:left-auto md:order-1">
+                        <!-- <div class="mx-auto font-semibold text-lg text-white">1</div> -->
+                    </div>
+                    <div
+                        class="order-1 bg-[#1d1836] rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 ml-8 md:ml-0 relative">
+                        <!-- Arrow for desktop left/right (simplified, omitting complex arrow css for now) -->
+                        <h3 class="font-bold text-white text-xl">Senior .Net Core and Angular Software Engineer</h3>
+                        <p class="text-secondary text-[16px] font-semibold" style="margin: 0">Evento Solutions PVT Ltd
+                            (Remote, UAE)</p>
+                        <p class="text-gray-400 text-sm mb-4">2022–October 2025</p>
+                        <ul class="list-disc ml-5 space-y-2 text-white-100 text-[14px] tracking-wider">
+                            <li>Spearheaded the development of Iktiva, Athar Festival, Future Sports Event, Event
+                                Management System, MergersBay and Dynamic Form Builder, utilizing .NET Core 7, Angular
+                                16, and CQRS design pattern, improving scalability by 25%.</li>
+                            <li>Successfully migrated legacy systems to Angular-based stacks, reducing maintenance costs
+                                by 30% and boosting system performance by 15%.</li>
+                            <li>Led a team of developers to create a dynamic form creation tool, reducing project
+                                delivery times by 15%.</li>
+                            <li>Implemented CI/CD pipelines using Azure DevOps, increasing deployment speed by 30%.</li>
+                            <li>Optimized SQL queries, improving response times by 20% and ensuring seamless performance
+                                for large-scale applications.</li>
+                        </ul>
+                        <p class="mt-4 text-[14px] text-secondary"><span class="text-[#915EFF]">Technologies:</span>
+                            .NET Core, Angular 14, Azure DevOps, SQL Server, CQRS, Azure Cloud Services, Docker</p>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div
+                    class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline fade-in-section group">
+                    <div class="order-1 w-1/12 hidden md:block"></div>
+                    <div
+                        class="z-20 flex items-center order-1 bg-[#1d1836] shadow-xl w-8 h-8 rounded-full border-4 border-[#915EFF] absolute left-[-11px] md:relative md:left-auto md:order-1">
+                    </div>
+                    <div
+                        class="order-1 bg-[#1d1836] rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 ml-8 md:ml-0 relative">
+                        <h3 class="font-bold text-white text-xl">Software Engineer</h3>
+                        <p class="text-secondary text-[16px] font-semibold" style="margin: 0">Netsol Technologies Ltd
+                            (Lahore, Pakistan)</p>
+                        <p class="text-gray-400 text-sm mb-4">2021–2022</p>
+                        <ul class="list-disc ml-5 space-y-2 text-white-100 text-[14px] tracking-wider">
+                            <li>Key contributor to the development of the BMW Wholesale Lease & Finance App, reducing
+                                bugs by 35% and improving system stability.</li>
+                            <li>Delivered critical solutions 20% ahead of schedule for new modules and bug fixes using
+                                .NET WPF and AngularJS.</li>
+                            <li>Integrated Fluent API for dynamic data handling, increasing data retrieval efficiency by
+                                18%.</li>
+                            <li>Collaborated with cross-functional teams, ensuring cross-browser compatibility and
+                                responsive design solutions.</li>
+                        </ul>
+                        <p class="mt-4 text-[14px] text-secondary"><span class="text-[#915EFF]">Technologies:</span>
+                            .NET WPF, AngularJS, Fluent API, MSSQL, Bootstrap, Agile Scrum</p>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="mb-8 flex justify-between items-center w-full right-timeline fade-in-section group">
+                    <div class="order-1 w-1/12 hidden md:block"></div>
+                    <div
+                        class="z-20 flex items-center order-1 bg-[#1d1836] shadow-xl w-8 h-8 rounded-full border-4 border-[#915EFF] absolute left-[-11px] md:relative md:left-auto md:order-1">
+                    </div>
+                    <div
+                        class="order-1 bg-[#1d1836] rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 ml-8 md:ml-0 relative">
+                        <h3 class="font-bold text-white text-xl">Angular/.NET Core Developer</h3>
+                        <p class="text-secondary text-[16px] font-semibold" style="margin: 0">H3 Solutions (Faisalabad,
+                            Pakistan)</p>
+                        <p class="text-gray-400 text-sm mb-4">2019–2021</p>
+                        <ul class="list-disc ml-5 space-y-2 text-white-100 text-[14px] tracking-wider">
+                            <li>Led the migration of the Legacy Accounts System to Angular 8 and .NET Core, improving
+                                system performance by 40%.</li>
+                            <li>Built CRM and Order Management systems using ASP.NET Core and AngularJS, reducing
+                                customer response times by 25%.</li>
+                            <li>Implemented RESTful APIs, improving system interoperability and reducing data sync
+                                issues by 20%.</li>
+                            <li>Enhanced UI/UX using Angular Material and SCSS, increasing user engagement by 15%.</li>
+                        </ul>
+                        <p class="mt-4 text-[14px] text-secondary"><span class="text-[#915EFF]">Technologies:</span>
+                            .NET Core, Angular 8, ASP.NET Core, RESTful APIs, Angular Material, SCSS</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="relative w-full min-h-screen mx-auto py-20">
+        <div class="absolute inset-0 z-0 w-full h-full pointer-events-none">
+            <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#050816] to-transparent z-10"></div>
+            <!-- Video background if supported -->
+            <video class="w-full h-full object-cover opacity-30" autoplay loop muted playsinline>
+                <source src="./assets/cards-video.webm" type="video/webm">
+            </video>
+            <div class="absolute top-[-400px] left-[-200px] w-[1000px] h-[1000px] z-[0] bg-radial-glow opacity-60">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="fade-in-section">
+                <p class="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">Tech</p>
+                <h2 class="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">Skills.</h2>
+            </div>
+
+            <div class="mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-center">
+                <!-- Tech Items (repeated pattern) -->
+                <div class="tilt-card w-full h-full">
+                    <div
+                        class="w-full h-[120px] relative group cursor-pointer flex flex-col justify-center items-center bg-tertiary/40 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#915EFF]/50 transition-all duration-300 shadow-card">
+                        <img src="./assets/images/tech/html.png"
+                            class="w-16 h-16 object-contain filter drop-shadow-lg" />
+                        <p class="text-secondary text-[14px] font-medium mt-2">HTML 5</p>
+                    </div>
+                </div>
+                <div class="tilt-card w-full h-full">
+                    <div
+                        class="w-full h-[120px] relative group cursor-pointer flex flex-col justify-center items-center bg-tertiary/40 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#915EFF]/50 transition-all duration-300 shadow-card">
+                        <img src="./assets/images/tech/css.png"
+                            class="w-16 h-16 object-contain filter drop-shadow-lg" />
+                        <p class="text-secondary text-[14px] font-medium mt-2">CSS 3</p>
+                    </div>
+                </div>
+                <div class="tilt-card w-full h-full">
+                    <div
+                        class="w-full h-[120px] relative group cursor-pointer flex flex-col justify-center items-center bg-tertiary/40 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#915EFF]/50 transition-all duration-300 shadow-card">
+                        <img src="./assets/images/tech/javascript.png"
+                            class="w-16 h-16 object-contain filter drop-shadow-lg" />
+                        <p class="text-secondary text-[14px] font-medium mt-2">JavaScript</p>
+                    </div>
+                </div>
+                <div class="tilt-card w-full h-full">
+                    <div
+                        class="w-full h-[120px] relative group cursor-pointer flex flex-col justify-center items-center bg-tertiary/40 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#915EFF]/50 transition-all duration-300 shadow-card">
+                        <img src="./assets/images/tech/typescript.png"
+                            class="w-16 h-16 object-contain filter drop-shadow-lg" />
+                        <p class="text-secondary text-[14px] font-medium mt-2">TypeScript</p>
+                    </div>
+                </div>
+                <div class="tilt-card w-full h-full">
+                    <div
+                        class="w-full h-[120px] relative group cursor-pointer flex flex-col justify-center items-center bg-tertiary/40 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#915EFF]/50 transition-all duration-300 shadow-card">
+                        <img src="./assets/images/tech/reactjs.png"
+                            class="w-16 h-16 object-contain filter drop-shadow-lg" />
+                        <p class="text-secondary text-[14px] font-medium mt-2">React JS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section -->
+    <section id="works" class="relative w-full min-h-screen mx-auto py-20 px-6 sm:px-16 max-w-7xl">
+        <div class="fade-in-section">
+            <p class="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">My work</p>
+            <h2 class="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">Projects.</h2>
+        </div>
+        <p class="mt-4 text-secondary text-[18px] max-w-3xl leading-[30px] font-semibold fade-in-section">
+            Here are some of my recent projects.
+        </p>
+
+        <div class="mt-20 grid grid-cols-1 xl:grid-cols-2 gap-10">
+            <!-- Project Card 1 -->
+            <div
+                class="tilt-card bg-black-200 rounded-2xl overflow-hidden sm:w-[500px] w-full mx-auto relative cursor-pointer">
+                <div class="w-full h-[230px] relative group overflow-hidden rounded-t-2xl">
+                    <img src="./assets/images/projects/project1.png"
+                        class="w-full h-full object-cover rounded-t-2xl group-hover:scale-110 transition-all"
+                        onerror="this.onerror=null; this.src='https://via.placeholder.com/500x230?text=Project+Image'" />
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center items-center gap-4">
+                        <a href="#" target="_blank"
+                            class="black-gradient w-12 h-12 rounded-full flex justify-center items-center border border-[#915EFF]">
+                            <img src="./assets/images/github.png" class="w-1/2 h-1/2 object-contain" />
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="p-6 min-h-[250px] flex flex-col justify-between backdrop-blur-sm bg-tertiary/80 rounded-b-2xl">
+                    <div>
+                        <h3 class="text-white text-[24px] font-bold mb-2">Project Name</h3>
+                        <p class="text-secondary text-[14px] mb-4">A brief description of the project goes here.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[14px] text-blue-500">#angular</span>
+                            <span class="text-[14px] text-green-500">#dotnet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional project cards would follow same pattern -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative w-full min-h-screen mx-auto py-20 px-6 sm:px-16 max-w-7xl">
+        <div class="fade-in-section">
+            <p class="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">Get in touch</p>
+            <h2 class="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">Contact.</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
+            <!-- Left Side: Earth Canvas Stub -->
+            <div
+                class="flex flex-col justify-between h-full overflow-hidden rounded-2xl bg-black-100 min-h-[350px] flex items-center justify-center">
+                <p class="text-secondary">3D Earth Canvas Placeholder</p>
+                <!-- In a real port, you'd initialize Three.js here in script.js -->
+            </div>
+
+            <!-- Right Side: Form -->
+            <div class="bg-black-200 p-6 md:p-8 rounded-2xl shadow-xl">
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label class="text-white block mb-2 font-semibold">Name</label>
+                        <input type="text" name="name" required
+                            class="w-full px-4 py-3 rounded-lg bg-tertiary text-white outline-none border border-gray-700 focus:border-purple-500 transition"
+                            placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label class="text-white block mb-2 font-semibold">Email</label>
+                        <input type="email" name="email" required
+                            class="w-full px-4 py-3 rounded-lg bg-tertiary text-white outline-none border border-gray-700 focus:border-purple-500 transition"
+                            placeholder="your@email.com">
+                    </div>
+                    <div>
+                        <label class="text-white block mb-2 font-semibold">Message</label>
+                        <textarea rows="5" name="message" required
+                            class="w-full px-4 py-3 rounded-lg bg-tertiary text-white outline-none border border-gray-700 focus:border-purple-500 transition"
+                            placeholder="Your message"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-purple-500 to-cyan-500 text-white py-4 rounded-lg font-bold text-lg hover:shadow-lg transition">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative w-full bg-black-200 py-12 px-6 border-t border-white border-opacity-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center h-full">
+            <div class="text-secondary mb-4 md:mb-0">
+                <p class="font-semibold">© 2026 Muhammad Arslan Haider. All rights reserved.</p>
+            </div>
+            <div class="flex gap-6">
+                <!-- Socials -->
+                <a href="#" class="text-secondary hover:text-white transition">GitHub</a>
+                <a href="#" class="text-secondary hover:text-white transition">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
