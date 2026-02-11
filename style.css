@@ -594,3 +594,114 @@ body {
         background-position: 200% center;
     }
 }
+/* ========================================
+   GLOBAL RESPONSIVE STYLES
+   ======================================== */
+
+/* Prevent horizontal overflow globally */
+html, body {
+    overflow-x: hidden;
+}
+
+/* === Extra Small Devices (320px - 480px) === */
+@media (max-width: 480px) {
+    /* Hero Section */
+    .hero-watermark {
+        font-size: 10vw;
+        letter-spacing: 0.05em;
+        opacity: 0.02;
+    }
+
+    /* Project Cards */
+    .tilt-card {
+        border-radius: 1rem;
+    }
+
+    .tilt-card h3 {
+        font-size: 18px;
+    }
+
+    .tilt-card p {
+        font-size: 13px;
+    }
+
+    /* Contact Section */
+    #earth-container {
+        min-height: 250px !important;
+        height: 280px !important;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.5rem 1rem;
+    }
+
+    /* Command Deck - Extra small */
+    .deck-tab {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .panel-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 8px;
+    }
+
+    .skill-item {
+        padding: 8px;
+        font-size: 11px;
+    }
+
+    .deck-display {
+        padding: 12px;
+    }
+
+    .panel-title {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+}
+
+/* === Small Devices (481px - 640px) === */
+@media (min-width: 481px) and (max-width: 640px) {
+    .hero-watermark {
+        font-size: 12vw;
+        letter-spacing: 0.08em;
+    }
+
+    #earth-container {
+        min-height: 300px !important;
+        height: 320px !important;
+    }
+}
+
+/* === Tablet (641px - 1024px) === */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .hero-watermark {
+        font-size: 13vw;
+    }
+}
+
+/* === Navigation and Layout Mobile Fix === */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.75rem 1rem;
+    }
+
+    /* Experience timeline mobile */
+    .right-timeline {
+        padding-left: 1.5rem;
+    }
+
+    /* Contact grid */
+    #contact .grid {
+        gap: 1.5rem;
+    }
+}
+
+/* === Ensure hero image does not overflow === */
+@media (max-width: 640px) {
+    #hero .animate-float-slow img {
+        max-width: 90vw;
+    }
+}

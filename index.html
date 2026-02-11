@@ -196,7 +196,8 @@
             <div class="relative w-full h-[350px] sm:h-[500px] lg:h-[700px] flex justify-center items-center">
                 <div
                     class="relative w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] lg:w-[650px] lg:h-[650px] z-20 animate-float-slow">
-                    <img src="./assets/images/Design/user.svg" alt="Developer" class="w-full h-full object-contain" />
+                    <img src="./assets/images/Design/user.svg" alt="Developer" class="w-full h-full object-contain"
+                        draggable="false" style="user-select:none; -webkit-user-drag:none; pointer-events:none;" />
                 </div>
             </div>
         </div>
@@ -239,7 +240,8 @@
             </div>
             <div class="flex-1 flex justify-center items-center relative min-h-[300px] md:min-h-[400px]">
                 <img src="./assets/images/Design/header.svg"
-                    class="w-full h-full object-contain animate-float drop-shadow-2xl" />
+                    class="w-full h-full object-contain animate-float drop-shadow-2xl" draggable="false"
+                    style="user-select:none; -webkit-user-drag:none; pointer-events:none;" />
             </div>
         </div>
 
@@ -402,7 +404,7 @@
             <!-- Command Deck (Tabbed Interface) -->
             <div class="mt-14 relative flex justify-center w-full">
                 <div
-                    class="command-deck border border-white/10 rounded-3xl w-full flex flex-col md:flex-row min-h-[500px] overflow-hidden">
+                    class="command-deck border border-white/10 rounded-3xl w-full flex flex-col md:flex-row min-h-[500px] overflow-hidden bg-black-200/50 backdrop-blur-md">
 
                     <!-- Sidebar Tabs -->
                     <div
@@ -678,10 +680,10 @@
             Here are some of my recent projects.
         </p>
 
-        <div class="mt-20 grid grid-cols-1 xl:grid-cols-2 gap-10">
+        <div class="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10">
             <!-- Project 1: Future Event 2025 -->
             <a href="https://event2025.eventoclients.com/" target="_blank" rel="noopener noreferrer"
-                class="tilt-card bg-black-200 rounded-2xl overflow-hidden sm:w-[500px] w-full mx-auto relative cursor-pointer block hover:scale-[1.02] transition-transform duration-300">
+                class="tilt-card bg-black-200 rounded-2xl overflow-hidden max-w-[500px] w-full mx-auto relative cursor-pointer block hover:scale-[1.02] transition-transform duration-300">
                 <div class="w-full h-[230px] relative group overflow-hidden rounded-t-2xl">
                     <img src="./assets/images/Projects/Future Event 2025 – Event Management Portal (Dubai).png"
                         class="w-full h-full object-cover rounded-t-2xl group-hover:scale-110 transition-all"
@@ -706,7 +708,7 @@
 
             <!-- Project 2: Athar Festival -->
             <div
-                class="tilt-card bg-black-200 rounded-2xl overflow-hidden sm:w-[500px] w-full mx-auto relative cursor-pointer">
+                class="tilt-card bg-black-200 rounded-2xl overflow-hidden max-w-[500px] w-full mx-auto relative cursor-pointer">
                 <div class="w-full h-[230px] relative group overflow-hidden rounded-t-2xl">
                     <img src="./assets/images/Projects/Athar Festival – Event Registration System.png"
                         class="w-full h-full object-cover rounded-t-2xl group-hover:scale-110 transition-all"
@@ -730,7 +732,7 @@
 
             <!-- Project 3: Mosadaqa -->
             <a href="https://www.mosadaqa.sa/Home/Landing" target="_blank" rel="noopener noreferrer"
-                class="tilt-card bg-black-200 rounded-2xl overflow-hidden sm:w-[500px] w-full mx-auto relative cursor-pointer block hover:scale-[1.02] transition-transform duration-300">
+                class="tilt-card bg-black-200 rounded-2xl overflow-hidden max-w-[500px] w-full mx-auto relative cursor-pointer block hover:scale-[1.02] transition-transform duration-300">
                 <div class="w-full h-[230px] relative group overflow-hidden rounded-t-2xl">
                     <img src="./assets/images/Projects/Mosadaqa – Saudi Government Education Portal.png"
                         class="w-full h-full object-cover rounded-t-2xl group-hover:scale-110 transition-all"
@@ -754,7 +756,7 @@
 
             <!-- Project 4: Dynamic Forms Builder -->
             <div
-                class="tilt-card bg-black-200 rounded-2xl overflow-hidden sm:w-[500px] w-full mx-auto relative cursor-pointer">
+                class="tilt-card bg-black-200 rounded-2xl overflow-hidden max-w-[500px] w-full mx-auto relative cursor-pointer">
                 <div class="w-full h-[230px] relative group overflow-hidden rounded-t-2xl">
                     <img src="./assets/images/Projects/Dynamic Forms Builder.png"
                         class="w-full h-full object-cover rounded-t-2xl group-hover:scale-110 transition-all"
@@ -779,7 +781,7 @@
 
             <!-- Project 5: MergersBay -->
             <div
-                class="tilt-card bg-black-200 rounded-2xl overflow-hidden sm:w-[500px] w-full mx-auto relative cursor-pointer">
+                class="tilt-card bg-black-200 rounded-2xl overflow-hidden max-w-[500px] w-full mx-auto relative cursor-pointer">
                 <div class="w-full h-[230px] relative group overflow-hidden rounded-t-2xl">
                     <img src="./assets/images/Projects/MergersBay – Real-Time Collaboration Platform.png"
                         class="w-full h-full object-cover rounded-t-2xl group-hover:scale-110 transition-all"
@@ -804,7 +806,7 @@
 
             <!-- Project 6: Ascent 2.0 -->
             <div
-                class="tilt-card bg-black-200 rounded-2xl overflow-hidden sm:w-[500px] w-full mx-auto relative cursor-pointer">
+                class="tilt-card bg-black-200 rounded-2xl overflow-hidden max-w-[500px] w-full mx-auto relative cursor-pointer">
                 <div class="w-full h-[230px] relative group overflow-hidden rounded-t-2xl">
                     <img src="./assets/images/Projects/Ascent 2.0 – Wholesale Management System.png"
                         class="w-full h-full object-cover rounded-t-2xl group-hover:scale-110 transition-all"
@@ -828,7 +830,7 @@
 
             <!-- Project 7: Pentair Pool Builder -->
             <div
-                class="tilt-card bg-black-200 rounded-2xl overflow-hidden sm:w-[500px] w-full mx-auto relative cursor-pointer">
+                class="tilt-card bg-black-200 rounded-2xl overflow-hidden max-w-[500px] w-full mx-auto relative cursor-pointer">
                 <div class="w-full h-[230px] relative group overflow-hidden rounded-t-2xl">
                     <img src="./assets/images/Projects/Pentair Pool Builder – Pool Management & Service Automation Platform.png"
                         class="w-full h-full object-cover rounded-t-2xl group-hover:scale-110 transition-all"
@@ -853,7 +855,7 @@
 
             <!-- Project 8: POS -->
             <div
-                class="tilt-card bg-black-200 rounded-2xl overflow-hidden sm:w-[500px] w-full mx-auto relative cursor-pointer">
+                class="tilt-card bg-black-200 rounded-2xl overflow-hidden max-w-[500px] w-full mx-auto relative cursor-pointer">
                 <div class="w-full h-[230px] relative group overflow-hidden rounded-t-2xl">
                     <img src="./assets/images/Projects/POS – eCommerce & Point of Sale Platform.png"
                         class="w-full h-full object-cover rounded-t-2xl group-hover:scale-110 transition-all"
