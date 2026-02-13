@@ -491,6 +491,15 @@ img {
     transition: all 0.3s ease;
     backdrop-filter: blur(3px);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    min-width: 0;
+    overflow: hidden;
+}
+
+.skill-item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
 }
 
 .skill-item:hover {
@@ -499,6 +508,10 @@ img {
     color: #fff;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+}
+
+.skill-icon {
+    flex-shrink: 0;
 }
 
 /* Command Deck Responsiveness */
@@ -522,6 +535,7 @@ img {
         padding: 10px 15px;
         font-size: 12px;
         width: auto;
+        min-width: max-content;
     }
 
     .deck-tab:hover {
@@ -541,6 +555,7 @@ img {
     .skill-item {
         padding: 10px;
         font-size: 12px;
+        gap: 0.5rem;
     }
 
     .panel-title {
@@ -675,6 +690,7 @@ body {
     /* Project Cards */
     .tilt-card {
         border-radius: 1rem;
+        max-width: 100% !important;
     }
 
     .tilt-card h3 {
@@ -685,15 +701,29 @@ body {
         font-size: 13px;
     }
 
+    /* Project card text */
+    .tilt-card .text-\[24px\] {
+        font-size: 20px;
+    }
+
     /* Contact Section */
     #earth-container {
-        min-height: 250px !important;
-        height: 280px !important;
+        min-height: 230px !important;
+        height: 260px !important;
     }
 
     /* Footer */
     footer {
         padding: 1.5rem 1rem;
+    }
+
+    footer .flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .gap-8 {
+        gap: 1rem;
     }
 
     /* Command Deck - Extra small */
@@ -702,14 +732,29 @@ body {
         font-size: 11px;
     }
 
+    /* Only show icons on tabs for extra small screens */
+    .deck-tab .tab-label {
+        display: none;
+    }
+
+    .deck-tab .tab-icon {
+        font-size: 20px;
+    }
+
     .panel-grid {
-        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
         gap: 8px;
     }
 
     .skill-item {
-        padding: 8px;
+        padding: 8px 10px;
         font-size: 11px;
+        gap: 0.4rem;
+    }
+
+    .skill-icon {
+        width: 20px;
+        height: 20px;
     }
 
     .deck-display {
@@ -719,6 +764,56 @@ body {
     .panel-title {
         font-size: 16px;
         margin-bottom: 15px;
+    }
+
+    /* Service cards stack full width */
+    .tilt-card.xs\:w-\[250px\] {
+        width: 100% !important;
+    }
+}
+
+/* === Micro Devices (below 360px) === */
+@media (max-width: 360px) {
+    .panel-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+
+    .skill-item {
+        padding: 6px 8px;
+        font-size: 10px;
+        gap: 0.35rem;
+        border-radius: 8px;
+    }
+
+    .skill-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .deck-display {
+        padding: 10px;
+    }
+
+    .panel-title {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    /* Hero text adjustments */
+    .hero-watermark {
+        display: none;
+    }
+
+    /* Floating icons hidden on tiny screens */
+    .floating-icon {
+        display: none;
+    }
+
+    /* Contact form */
+    #earth-container {
+        min-height: 200px !important;
+        height: 220px !important;
     }
 }
 
@@ -733,12 +828,21 @@ body {
         min-height: 300px !important;
         height: 320px !important;
     }
+
+    .panel-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
 }
 
 /* === Tablet (641px - 1024px) === */
 @media (min-width: 641px) and (max-width: 1024px) {
     .hero-watermark {
         font-size: 13vw;
+    }
+
+    /* Improve project card layout on tablets */
+    .tilt-card {
+        max-width: 100% !important;
     }
 }
 
@@ -749,13 +853,24 @@ body {
     }
 
     /* Experience timeline mobile */
-    .right-timeline {
+    .right-timeline,
+    .left-timeline {
         padding-left: 1.5rem;
+    }
+
+    /* Timeline dots positioning fix */
+    .vertical-timeline .z-20 {
+        left: -13px;
     }
 
     /* Contact grid */
     #contact .grid {
         gap: 1.5rem;
+    }
+
+    /* Project cards description min-height reduction */
+    .tilt-card .min-h-\[250px\] {
+        min-height: 200px;
     }
 }
 
@@ -764,28 +879,10 @@ body {
     #hero .animate-float-slow img {
         max-width: 90vw;
     }
-}
 
-/* === Service cards mobile fix === */
-@media (max-width: 480px) {
-    .tilt-card {
-        max-width: 100% !important;
-    }
-
-    /* Project card text */
-    .tilt-card .text-\[24px\] {
-        font-size: 20px;
-    }
-
-    /* Footer mobile */
-    footer .flex {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    /* Social links wrap */
-    footer .gap-8 {
-        gap: 1rem;
+    /* Shrink hero social link buttons */
+    .hero-watermark+div .flex.flex-wrap a {
+        font-size: 13px;
     }
 }
 
