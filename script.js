@@ -41,16 +41,15 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Typing Animation
+// Typing Animation for the name
 const typingText = document.getElementById('typing-text');
-const roles = ["Angular/ReactJS & .NET Core Expert", "Senior Full-Stack Software Engineer"];
-let roleIndex = 0;
+const roles = "Senior Software Engineer";
 let charIndex = 0;
 let isDeleting = false;
 let typeSpeed = 100;
 
 function typeEffect() {
-    const currentRole = roles[roleIndex % roles.length];
+    const currentRole = roles;
 
     if (isDeleting) {
         typingText.textContent = currentRole.substring(0, charIndex - 1);
@@ -67,7 +66,6 @@ function typeEffect() {
         typeSpeed = 2000;
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
-        roleIndex++;
         typeSpeed = 500;
     }
 
